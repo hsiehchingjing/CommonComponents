@@ -6,7 +6,7 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-class JsonConvert {
+public class JsonConvert {
 	public static String SerializeObject(Object value) {
 		ObjectMapper jsonMapper = new ObjectMapper();
 		String r = null;

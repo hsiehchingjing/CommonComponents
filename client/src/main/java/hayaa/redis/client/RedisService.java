@@ -1,17 +1,21 @@
 package hayaa.redis.client;
+
+
+
+
+import java.util.HashMap;
+
+
 /**
  * @see 提供服务接口
  * @author hsieh
  *
  */
-
-import java.util.HashMap;
-
 public class RedisService {
-	private static HashMap<String, IRedisClient> g_InterfaceSet = 
-			new HashMap<String, IRedisClient>();
+	private static HashMap<String, IRedisClient> g_InterfaceSet = new HashMap<String, IRedisClient>();
+
 	public static IRedisClient getService(String configName) {
-		if(g_InterfaceSet.containsKey(configName)) {
+		if (g_InterfaceSet.containsKey(configName)) {
 			return g_InterfaceSet.get(configName);
 		}
 		try {
@@ -23,4 +27,6 @@ public class RedisService {
 		}
 		return g_InterfaceSet.get(configName);
 	}
+
+	
 }

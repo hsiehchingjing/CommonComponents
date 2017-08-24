@@ -30,7 +30,7 @@ final class ConfigManager {
 	private static void loadConfig() {
 		// 读取配置文件
 		Properties props = System.getProperties();
-		String baseDirectory = props.getProperty("java.class.path");
+		String baseDirectory = props.getProperty("user.dir");
 		try {
 			RedisGroup group = JsonConvert.DeserializeObject(
 					FileHelper.ReadAllText(baseDirectory + "/redis.config"),
