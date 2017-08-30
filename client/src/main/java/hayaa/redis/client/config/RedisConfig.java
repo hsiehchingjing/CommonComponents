@@ -24,4 +24,6 @@ public class RedisConfig {
 	// 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException；
 	public  long MaxWait;
 	public  int TimeOut;
+	public boolean IsCluster;
+	public RedisClusterConfig[] ClusterHosts;
 }
