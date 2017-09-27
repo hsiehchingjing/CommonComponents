@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import hayaa.common.json.JsonConvert;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 
@@ -17,7 +18,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @see 内部有连接优化，不建议创建多个对象
+ * @描述 内部有连接优化，不建议创建多个对象
  * @author hsieh
  * 
  */
@@ -40,7 +41,10 @@ public class RedisClient implements IRedisClient {
 	}
 
 	/**
-	 * @see 初始化集群
+	 * @描述：初始化集群
+	 * @version 1.0 17-9-27 17-9-27 由谢青靖（xieqj@cloud-young.com）创建
+	 * @param
+	 * @返回
 	 */
 	private void InitCluster() {
 		g_jedisClusterNodes = new HashSet<HostAndPort>();
@@ -51,7 +55,10 @@ public class RedisClient implements IRedisClient {
 	}
 
 	/**
-	 * @see 初始化连接池
+	 * @描述：初始化连接池
+	 * @version 1.0 17-9-27 17-9-27 由谢青靖（xieqj@cloud-young.com）创建
+	 * @param
+	 * @返回
 	 */
 	private void InitPool() {
 		try {
@@ -67,7 +74,7 @@ public class RedisClient implements IRedisClient {
 		}
 	}
 
-	@Override
+
 	public boolean setObject(String key, Object value) {
 		if (g_Config.IsCluster) {
 			return c_setObject(key, value);
@@ -115,7 +122,7 @@ public class RedisClient implements IRedisClient {
 		return r;
 	}
 
-	@Override
+
 	public boolean setObject(String key, Object value, int seconds) {
 		if (g_Config.IsCluster) {
 			return c_setObject(key, value, seconds);
@@ -167,7 +174,7 @@ public class RedisClient implements IRedisClient {
 		return r;
 	}
 
-	@Override
+
 	public boolean delObject(List<String> keys) {
 		if (g_Config.IsCluster) {
 			return c_delObject(keys);
@@ -215,7 +222,7 @@ public class RedisClient implements IRedisClient {
 		return r;
 	}
 
-	@Override
+
 	public <T> T getObject(String key, Class<T> valueType) {
 		if (g_Config.IsCluster) {
 			return c_getObject(key, valueType);
