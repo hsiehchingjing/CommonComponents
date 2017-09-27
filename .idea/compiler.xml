@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="CommonComponents" />
         <module name="helper" />
+        <module name="redisclient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CommonComponents" target="1.5" />
       <module name="helper" target="1.5" />
+      <module name="redisclient" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

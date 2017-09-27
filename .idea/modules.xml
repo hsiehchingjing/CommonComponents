@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CommonComponents.iml" filepath="$PROJECT_DIR$/.idea/CommonComponents.iml" />
       <module fileurl="file://$PROJECT_DIR$/helper/helper.iml" filepath="$PROJECT_DIR$/helper/helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/redisclient.iml" filepath="$PROJECT_DIR$/client/redisclient.iml" />
     </modules>
   </component>
 </project>
